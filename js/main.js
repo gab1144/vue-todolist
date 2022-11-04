@@ -29,21 +29,25 @@ createApp({
       if(this.tasks[index].done){
         this.tasks.splice(index, 1);
       } else {
-        console.log("ci sono");
         this.errorDelete="Non puoi cancellare un'attività se non l'hai ancora svolta";
       }
     },
     addTask(){
       if(this.newTaskText.length < 5){
         this.errorAddNewTask = "Attenzione! Il messaggio deve avere almeno 5 caratteri";
-    }else{
+      }else{
         const newTask = {
-            text: this.newTaskText,
-            done: false
+          text: this.newTaskText,
+          done: false
         }
-        this.tasks.unshift(newTask);
-        this.errorAddNewTask = "";
-    }
+
+        if(this.tasks.find(task =>task.text.toLowerCase() === newTask.text.toLowerCase())){
+          this.errorAddNewTask = "Hai già inserito questa task";
+        }else{
+          this.tasks.unshift(newTask);
+          this.errorAddNewTask = "";
+        }
+      }
     }
   }
 }).mount('#app')
