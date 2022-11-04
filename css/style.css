@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(93, 128, 255);
+}
+
 .task.done {
   text-decoration: line-through;
 }
@@ -16,7 +21,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .logo {
@@ -26,32 +33,56 @@
 
 .input-area {
   margin-bottom: 50px;
+  width: 100%;
 }
 
-.input-area input {
-  width: 500px;
+.input-and-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input-error {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-and-button input {
+  width: 100%;
   padding: 15px;
   margin-right: 10px;
+  border-radius: 10px;
 }
 
-.input-area button {
+.input-and-button button {
   padding: 15px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(53, 53, 236);
+  border: none;
+  font-weight: bold;
 }
 
 .tasks-area {
-  background-color: rgb(153, 153, 153);
+  background-color: white;
   padding: 20px;
   border-radius: 15px;
   width: 50%;
+  width: 100%;
 }
 
-.tasks-area ul{
+.tasks-area ul {
   list-style: none;
 }
 
-.tasks-area li{
+.tasks-area li {
   display: flex;
   justify-content: space-between;
+  padding: 10px 0;
+}
+
+.tasks-area li:not(:last-child) {
+  border-bottom: 1px solid black;
 }
 
 .tasks-area span{
@@ -61,5 +92,9 @@
 
 .error{
   display: block;
-  color: red;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 10px;
 }
