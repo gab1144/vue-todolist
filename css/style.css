@@ -52,6 +52,7 @@ body {
   padding: 15px;
   margin-right: 10px;
   border-radius: 10px;
+  border: none;
 }
 
 .input-and-button button {
