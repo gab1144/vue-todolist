@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ========== Font Awesome ========== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- ========== /Font Awesome ========== -->
+
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Vue To Do List</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="logo">
+      <img :src="logoPath" alt="Logo">
+    </div>
+
+    <div class="input-area">
+      <input type="text" v-model.trim="newTaskText" placeholder="New task">
+      <button @click="addTask()">Aggiungi</button>
+      <span class="error">{{errorAddNewTask}}</span>
+      <span class="error">{{errorDelete}}</span>
+    </div>
+    
+    <div class="tasks-area">
+      <ul
+        v-if="tasks.length">
+        <li
+          v-for="(task, index) of tasks"
+          class="task"
+          :class="{'done': task.done}">
+            <span @click.stop="task.done = !task.done">{{task.text}}</span>
+            <i class="fa-solid fa-xmark"
+            @click="removeTask(index)"></i>
+        </li>
+      </ul>
+
+      <h3 v-else>Non ci sono task</h3>
+
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

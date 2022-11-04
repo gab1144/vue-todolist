@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.task.done {
+  text-decoration: line-through;
+}
+
+.logo img {
+  width: 300px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.logo {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.input-area {
+  margin-bottom: 50px;
+}
+
+.input-area input {
+  width: 500px;
+  padding: 15px;
+  margin-right: 10px;
+}
+
+.input-area button {
+  padding: 15px;
+}
+
+.tasks-area {
+  background-color: rgb(153, 153, 153);
+  padding: 20px;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.tasks-area ul{
+  list-style: none;
+}
+
+.tasks-area li{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks-area span{
+  display: block;
+  width: 100%;
+}
+
+.error{
+  display: block;
+  color: red;
+}
